@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #f7d794,
+    #778beb,
+    #ea8685,
+    #f3a683,
+    #cf6a87,
+    #786fa6,
+    #353b48,
+    #2f3542,
+    #2f3640
+  );
+  --light: #e6e7ee;
+  --dark: #31344b;
+  --color-first          : #65587f;
+  --color-second         : #f18867;
+  --color-third          : #e85f99;
+  --color-forth          : #50bda1;
+  --block-width          :   300px;
+  --block-height         :   270px;
+  --border-width         : .625rem;
+  --border-radius-outer  :     8px;
+  --border-radius-inner  : calc(var(--border-radius-outer) / 2)
+}
+
+.body-whole {
+  /* background: var(--gradient); */
+  background-color: var(--light);
+  background-size: 400%;
+  background-position: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  animation: bg-animation 50s infinite alternate;
+}
+
+.title {
+  color: var(--dark);
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.neumorphic {
+  border-color: #d1d9e6;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;;
+}
+
+.container {
+  width: 90vw;
+  height: 80vh;
+  background-color: transparent;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+  margin-left: 50px;
+}
+
+.info-area {
+  color:var(--dark);
+  text-align: left;
+  width: 100%;
+}
+
+#album-art {
+  width: 35vh;
+  height: 35vh;
+  border-radius: 50%;
+  background-size: contain;
+  background-position: bottom;
+  -webkit-animation:spin 15s linear infinite;
+  -moz-animation:spin 15s linear infinite;
+  animation:spin 15s linear infinite;
+  animation-play-state: paused;
+}
+
+#song {
+  font-size: 25px;
+  margin: 5px 0 10px 0;
+}
+
+#album {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#artist {
+  font-size: 14px;
+  margin: 10px 0 15px 0;
+}
+
+.control-center {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  height: 10vh;
+  width: 50%;
+}
+
+@keyframes bg-animation {
+  0%{
+    background-position: left;
+  }
+  50%{
+    background-position: right;
+  }
+  100%{
+    background-position: left;
+  }
+}
+
+.rounded {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #fff;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light);
+  cursor: pointer;
+  font-size: 30px;
+  color: var(--dark);
+}
+
+.rounded:hover {
+  color: #31344b;
+  background-color: var(--light);
+  border-color: var(--light);
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+  transition: all ease 0.1s;
+}
+
+.play {
+  height: 80px;
+  width: 80px;
+}
+
+#play-btn, #pause-btn {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+#pause-btn {
+  visibility: none;
+}
+
+#play-pause {
+  transition: all ease-in-out 1s;
+}
+
+.songs {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  border-radius: 0 25px 25px 0;
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+}
+
+.song-select {
+  padding: 10px 15px;
+  border-radius: 20px;
+  color: #00FFFF;
+  cursor: pointer;
+}
+
+#file-input {
+  visibility: hidden;
+}
+
+.song-info {
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 50%;
+  float: right;
+  text-align: center;
+}
+
+.song-info:hover {
+  transition: all ease-in 0.15s;
+  color: #00FFFF;
+  font-weight: 600;
+}
+
+.clear {
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: red;
+  transition: all ease 0.2s;
+}
+
+.stack-area {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px 0 0 25px;
+}
+
+#song-card {
+  width: 60%;
+  height: 80%;
+  border-radius: 25px;
+  background-color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* background-image: url("https://99designs-blog.imgix.net/blog/wp-content/uploads/2017/12/attachment_68585523.jpg?auto=format&q=60&fit=max&w=930"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@keyframes pulse {
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.top-of-card {
+  height: 50%;
+}
+
+.bottom-of-card {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.8), transparent);
+  height: 100%;
+  border-radius: 0 0 25px 25px;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.btn-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-btn:hover {
+  color: red;
+}
+
+.dismiss-btn:hover {
+  color: cyan;
+}
+
+#songs-list {
+  width: 100%;
+  height: 90%;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.song-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.song-item:hover {
+  text-align: center;
+  width: 90%;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+}
+
+@media only screen and (max-width: 800px){
+
+  .container {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+  
+  .subtitle {
+    font-size: medium;
+    width: 80%
+  }
+
+  .info-area {
+    flex: 1;
+    height: 200px;
+  }
+
+  .player {
+    margin: 0;
+    width: 80%;
+    padding: 20px;
+  }
+
+  .songs {
+    width: 90%;
+    height: 40%;
+    padding: 20px;
+    border-radius: 0 0 25px 25px;
+  }
+
+  .play {
+    height: 60px;
+    width: 60px;
+  }
+
+  .control-center {
+    width: 100%;
+  }
+
+  #album-art {
+    width: 30vh;
+    height: 30vh;
+  }
+
+  .stack-area {
+    width: 100%;
+    height: 60%;
+  }
+
+  #song {
+    font-size: 18px;
+  }
+
+  #album {
+    font-size: 12px;
+  }
+
+  #artist {
+    font-size: 10px;
+  }
+
+  .bottom-of-card {
+    padding: 20px 15px;
+  }
+
+  .rounded {
+    width: 35px;
+    height: 35px;
+  }
+
+  .like-btn .dismiss-btn {
+    font-size: 10px;
+  }
+}

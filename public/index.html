@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Music player for short bytes">
+  <meta http-equiv='Referrer-Policy' content='no-referrer-when-downgrade'>
+  <meta property="og:title" content="Paper like Music Player">
+  <meta property="og:description" content="Music player for short bytes">
+  <meta property="og:type" content="type">
+  <meta property="og:locale" content="en_IN">
+  <meta name="robots" content="index, follow">
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="https://cdn.dribbble.com/users/1365844/screenshots/15172963/media/f3b09179d3e3b69492000be8ab663a5a.jpg?compress=1&resize=400x300"
+  >
+  <link rel="stylesheet" href="style.css">
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.js"
+    integrity="sha512-fCU+rmH3nS/RJaTSl/ylo/PxwWIZwJts3rfxRylSPqGYMJGPLXvPJGOTF+ECb0K5m9rSXbkCNg2PR7WKGWRTVQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></script>
+  <script type="application/ld+json">
+    {
+      "@context" : "http://localhost:5500",
+      "@type" : "Audio",
+      "headline" : "Paper like Music Player",
+      "author" : {
+        "@type" : "Person",
+        "name" : "Joel Vinay Kumar"
+      },
+      "datePublished" : "2021-11-16",
+      "image" : "https://cdn.dribbble.com/users/1365844/screenshots/15172963/media/f3b09179d3e3b69492000be8ab663a5a.jpg?compress=1&resize=400x300"
+    }
+  </script>
+  <title>Music Player</title>
+</head>
+<body class="body-whole">
+  <h1 class="title" role="heading" aria-label="1">Paper like Music Player</h1>
+  <h3 class="subtitle" role="heading" aria-label="3">Listen 30 second preview and quickly download favorite playlist</h3>
+  <div class="container neumorphic">
+    <!-- <div class="player">
+      <div class="info-area">
+        <h3 id="song" role="heading" aria-label="3">[Song Name]</h3>
+        <h5 id="album" role="heading" aria-label="5">[Album Name]</h5>
+        <p id="artist" role="text" aria-label="name of artist">[Artist Name]</p>
+      </div>
+      <div class="neumorphic" id="album-art" ></div>
+      <div class="control-center">
+        <div class="prev-btn rounded neumorphic-inward">
+          <p role="img" aria-label="play previous song">&#x00ab;</p>
+        </div>
+        <div class="rounded play neumorphic-inward">
+          <p id="play-btn" role="img" aria-label="play or pause">&#x25b6;</p>
+        </div>
+        <div class="next-btn rounded neumorphic-inward" aria-label="play next song">
+          <p role="img" aria-label="play previous song">&#x00bb;</p>
+        </div>
+      </div>
+    </div> -->
+    <div class="stack-area">
+      <div id="song-card" class="neumorphic">
+        <div class="top-of-card"></div>
+        <div class="bottom-of-card">
+          <div class="info-area">
+            <h3 id="song" role="heading" aria-label="3">[Song Name]</h3>
+            <h5 id="album" role="heading" aria-label="5">[Album Name]</h5>
+            <p id="artist" role="text" aria-label="name of artist">[Artist Name]</p>
+          </div>
+          <div class="btn-area">
+            <div id="dismiss-btn" onclick="dismiss()" class="rounded">
+              &#128473;
+            </div>
+            <div id="like-btn" onclick="addToFavorites()" class="rounded">
+              &#10084;
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="songs" aria-label="area of songs">
+      <h2 role="heading" aria-label="2" >Your Favorites</h2>
+      <div role="list" aria-label="songs-list" id="songs-list"></div>
+    </div>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>
